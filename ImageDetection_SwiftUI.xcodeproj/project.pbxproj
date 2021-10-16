@@ -11,6 +11,7 @@
 		45E404F7271B13FB0010A0F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E404F6271B13FB0010A0F9 /* ContentView.swift */; };
 		45E404F9271B13FE0010A0F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45E404F8271B13FE0010A0F9 /* Assets.xcassets */; };
 		45E404FC271B13FE0010A0F9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45E404FB271B13FE0010A0F9 /* Preview Assets.xcassets */; };
+		45E40507271B148C0010A0F9 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E40506271B148C0010A0F9 /* SwiftUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		45E404F8271B13FE0010A0F9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45E404FB271B13FE0010A0F9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		45E404FD271B13FE0010A0F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45E40506271B148C0010A0F9 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +54,7 @@
 		45E404F3271B13FB0010A0F9 /* ImageDetection_SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				45E40505271B147E0010A0F9 /* Detect Image */,
 				45E404F4271B13FB0010A0F9 /* ImageDetection_SwiftUIApp.swift */,
 				45E404F6271B13FB0010A0F9 /* ContentView.swift */,
 				45E404F8271B13FE0010A0F9 /* Assets.xcassets */,
@@ -67,6 +70,14 @@
 				45E404FB271B13FE0010A0F9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		45E40505271B147E0010A0F9 /* Detect Image */ = {
+			isa = PBXGroup;
+			children = (
+				45E40506271B148C0010A0F9 /* SwiftUIView.swift */,
+			);
+			path = "Detect Image";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +151,7 @@
 			files = (
 				45E404F7271B13FB0010A0F9 /* ContentView.swift in Sources */,
 				45E404F5271B13FB0010A0F9 /* ImageDetection_SwiftUIApp.swift in Sources */,
+				45E40507271B148C0010A0F9 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
