@@ -9,11 +9,12 @@ import SwiftUI
 
 struct SwiftUIView: View {
     
-    let imgArr = ["heart","send","bottle","instagram","facebook","user","comment","tiger","banana"]
+    let imgArr = ["heart","send","bottle","zebra","jaguar","instagram","facebook","monkey","panda","redFox","user","comment","tiger","elephant","banana","nature"]
     
     @State var currentIndex : Int = 0
+    @State var textLabelStr : String = ""
     
-    
+    var machineModel = MobileNetV2()
     
     var body: some View {
         VStack {
@@ -24,13 +25,6 @@ struct SwiftUIView: View {
                 
                 //Change Image button
                 Button(action: {
-                    
-//                    if self.currentIndex < self.imgArr.count - 1 {
-//                        self.currentIndex = self.currentIndex  + 1
-//                    } else {
-//                        self.currentIndex = 0
-//                    }
-                    
                     let randomNo = Int.random(in: 0...imgArr.count - 1)
                     self.currentIndex = randomNo
                     
@@ -46,7 +40,13 @@ struct SwiftUIView: View {
                 
             }
             
-            Button(action: {}, label: {
+            Button(action: {
+                
+                // Detect image
+                textLabelStr = ""
+                ImageDetection()
+                
+            }, label: {
                 Text("Detect Image")
             })
             .padding()
@@ -54,10 +54,29 @@ struct SwiftUIView: View {
             .background(Color.init(.blue))
             .foregroundColor(.white)
             
-            
-            Text("Image Name")
+            Text(textLabelStr)
         }
     }
+    
+    private func ImageDetection() {
+        
+        let currentImgName = imgArr[currentIndex]
+        
+        // Image Resize
+        guard let img = UIImage(named: currentImgName),
+              let resizedImg = img.resizeTo(size: CGSize(width: 224, height: 224)),
+              let buffer = resizedImg.toBuffer() else {
+            return
+        }
+        
+        let output = try? machineModel.prediction(image: buffer)
+        
+        if let output = output {
+            textLabelStr = output.classLabel
+        }
+    }
+    
+    
 }
 
 struct SwiftUIView_Previews: PreviewProvider {
